@@ -3,7 +3,6 @@
 
 # imports
 import random # for rolling dice
-import time # for wait time
 
 # variables
 walletCash = int(20)
@@ -70,7 +69,6 @@ def manual():
 
 # main code
 manual()
-time.wait(3)
 getDiceInfo()
 calculateMinMax()
 placeBet()

@@ -28,11 +28,11 @@ def calculateMinMax(): # gets the minimum & maximum roll possible given the amou
     global minRoll
     global maxRoll
     minRoll = howManyDice
-    maxRoll = howManyDice * howManySides
+    maxRoll = int(howManyDice * howManySides)
 
 def rollDice(): # rolls dice, duh
     global curentRoll
-    currentRoll = random.randint(minRoll, MaxRoll)
+    currentRoll = random.randint(minRoll, maxRoll)
     lossCheck()
 
 def placeBet(): # place your bet on the next roll

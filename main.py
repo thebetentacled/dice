@@ -6,10 +6,8 @@ import random # for rolling dice
 
 # variables
 walletCash = int(20)
-howManyDice = int(0)
-howManySides = int(0)
-minRoll = int(0)
-maxRoll = int(0)
+minRoll = int(2)
+maxRoll = int(12)
 currentBet = int(0)
 currentMoneyBet = int(0)
 currentRoll = int(0)
@@ -17,18 +15,6 @@ currentRoll = int(0)
 # functions
 def sayCash():
     print("You have $", walletCash, ".")
-
-def getDiceInfo(): # gets the amount and type of dice
-    howManyDice = int(input("How many dice do you want to use? -> "))
-    howManySides = int(input("How many sides should the dice have? -> "))
-
-def calculateMinMax(): # gets the minimum & maximum roll possible given the amount of die
-    global howManyDice
-    global howManySides
-    global minRoll
-    global maxRoll
-    minRoll = howManyDice
-    maxRoll = int(howManyDice * howManySides)
 
 def rollDice(): # rolls dice, duh
     global curentRoll
@@ -68,7 +54,4 @@ def manual():
     print("the game will guide you through the rest.")
 
 # main code
-manual()
-getDiceInfo()
-calculateMinMax()
 placeBet()

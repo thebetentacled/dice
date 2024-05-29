@@ -33,15 +33,15 @@ def calculateMinMax(): # gets the minimum & maximum roll possible given the amou
 def rollDice(): # rolls dice, duh
     global curentRoll
     currentRoll = random.randint(minRoll, maxRoll)
-    lossCheck()
 
 def placeBet(): # place your bet on the next roll
     global currentBet
     global currentMoneyBet
     sayCash()
-    currentBet = int(input("what will the next roll be? ->"))
-    currentMoneyBet = int(input("how much will you bet on that? ->"))
+    currentBet = int(input("what will the next roll be? -> "))
+    currentMoneyBet = int(input("how much will you bet on that? -> "))
     rollDice()
+    changeMoney()
 
 def changeMoney(): # take or add money to your wallet
     global walletCash
@@ -52,9 +52,9 @@ def changeMoney(): # take or add money to your wallet
        walletCash = int(walletCash + currentMoneyBet)
     else: 
         walletCash = int(walletCash - currentMoneyBet)
-    placeBet()
+    lossCheck()
 
-def lossCheck():
+def lossCheck(): # check if you lose or not
     global walletCash
     if walletCash <= 0:
         print("you lost. better luck next time.")

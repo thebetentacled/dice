@@ -18,7 +18,7 @@ def sayCash():
 
 def rollDice(): # rolls dice, duh
     global curentRoll
-    currentRoll = random.randint(minRoll, maxRoll)
+    currentRoll = int(random.randint(minRoll, maxRoll))
     if currentRoll == 2:
         printTwo()
     elif currentRoll == 3:
@@ -44,6 +44,7 @@ def rollDice(): # rolls dice, duh
     else:
         pass
     changeMoney()
+
 def placeBet(): # place your bet on the next roll
     global currentBet
     global currentMoneyBet
@@ -57,7 +58,7 @@ def changeMoney(): # take or add money to your wallet
     global currentBet
     global currentMoneyBet
     global currentRoll
-    if currentBet == currentRoll:
+    if int(currentBet) == int(currentRoll):
        walletCash = int(walletCash + currentMoneyBet)
     else: 
         walletCash = int(walletCash - currentMoneyBet)

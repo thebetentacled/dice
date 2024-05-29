@@ -43,7 +43,7 @@ def rollDice(): # rolls dice, duh
         printTwelve()
     else:
         pass
-
+    changeMoney()
 def placeBet(): # place your bet on the next roll
     global currentBet
     global currentMoneyBet
@@ -51,7 +51,6 @@ def placeBet(): # place your bet on the next roll
     currentBet = int(input("what will the next roll be? -> "))
     currentMoneyBet = int(input("how much will you bet on that? -> "))
     rollDice()
-    changeMoney()
 
 def changeMoney(): # take or add money to your wallet
     global walletCash

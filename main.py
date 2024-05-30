@@ -5,10 +5,10 @@
 import random # for rolling dice
 
 # variables
-walletCash = int(20)
-currentBet = int(0)
-currentMoneyBet = int(0)
-currentRoll = int(0)
+walletCash = float(20)
+currentBet = float(0)
+currentMoneyBet = float(0)
+currentRoll = float(0)
 
 # functions
 def sayCash():
@@ -16,29 +16,29 @@ def sayCash():
 
 def rollDice(): # rolls dice, duh
     global curentRoll
-    currentRoll = random.randint(2, 12)
+    currentRoll = float(random.randint(2, 12))
     print(currentRoll)
-    if currentRoll == 2:
+    if currentRoll == float(2):
         printTwo()
-    elif currentRoll == 3:
+    elif currentRoll == float(3):
         printThree()
-    elif currentRoll == 4:
+    elif currentRoll == float(4):
         printFour()
-    elif currentRoll == 5:
+    elif currentRoll == float(5):
         printFive()
-    elif currentRoll == 6:
+    elif currentRoll == float(6):
         printSix()
-    elif currentRoll == 7:
+    elif currentRoll == float(7):
         printSeven()
-    elif currentRoll == 8:
+    elif currentRoll == float(8):
         printEight()
-    elif currentRoll == 9:
+    elif currentRoll == float(9):
         printNine()
-    elif currentRoll == 10:
+    elif currentRoll == float(10):
         printTen()
-    elif currentRoll == 11:
+    elif currentRoll == float(11):
         printEleven()
-    elif currentRoll == 12:
+    elif currentRoll == float(12):
         printTwelve()
     changeMoney()
 
@@ -46,8 +46,8 @@ def placeBet(): # place your bet on the next roll
     global currentBet
     global currentMoneyBet
     sayCash()
-    currentBet = int(input("what will the next roll be? -> "))
-    currentMoneyBet = int(input("how much will you bet on that? -> "))
+    currentBet = float(input("what will the next roll be? -> "))
+    currentMoneyBet = float(input("how much will you bet on that? -> "))
     rollDice()
 
 def changeMoney(): # take or add money to your wallet
@@ -56,21 +56,21 @@ def changeMoney(): # take or add money to your wallet
     global currentMoneyBet
     global currentRoll
     if currentBet == currentRoll:
-       walletCash = int(walletCash + currentMoneyBet)
+       walletCash = walletCash + currentMoneyBet
     elif currentBet > currentRoll:
         print("bet was greater than roll")
-        walletCash = int(walletCash - currentMoneyBet)
+        walletCash = walletCash - currentMoneyBet
         lossCheck()
     elif currentBet < currentRoll:
         print("bet was less than roll")
-        walletCash = int(walletCash - currentMoneyBet)
+        walletCash = walletCash - currentMoneyBet
         lossCheck()
     else: 
         print("what the fuck")
 
 def lossCheck(): # check if you lose or not
     global walletCash
-    if walletCash <= 0:
+    if walletCash <= float(0):
         print("you lost. better luck next time.")
         exit()
     else:

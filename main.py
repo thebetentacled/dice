@@ -16,8 +16,12 @@ def sayCash():
 
 def rollDice(): # rolls dice, duh
     global curentRoll
+    global currentBet
+    global currentMoneyBet
     currentRoll = random.randint(2, 12)
-    print(currentRoll)
+    print("dice rolled ", currentRoll)
+    print("you bet that dice would roll", currentBet)
+    print("you bet $", currentMoneyBet, ".")
     if currentRoll == 2:
         printTwo()
     elif currentRoll == 3:

@@ -5,10 +5,10 @@
 import random # for rolling dice
 
 # variables
-walletCash = float(20)
-currentBet = float(0)
-currentMoneyBet = float(0)
-currentRoll = float(0)
+walletCash = str(20)
+currentBet = str(0)
+currentMoneyBet = str(0)
+currentRoll = str(0)
 
 # functions
 def sayCash():
@@ -16,29 +16,29 @@ def sayCash():
 
 def rollDice(): # rolls dice, duh
     global curentRoll
-    currentRoll = float(random.randint(2, 12))
+    currentRoll = str(random.randint(2, 12))
     print(currentRoll)
-    if currentRoll == float(2):
+    if currentRoll is str(2):
         printTwo()
-    elif currentRoll == float(3):
+    elif currentRoll is str(3):
         printThree()
-    elif currentRoll == float(4):
+    elif currentRoll is str(4):
         printFour()
-    elif currentRoll == float(5):
+    elif currentRoll is str(5):
         printFive()
-    elif currentRoll == float(6):
+    elif currentRoll is str(6):
         printSix()
-    elif currentRoll == float(7):
+    elif currentRoll is str(7):
         printSeven()
-    elif currentRoll == float(8):
+    elif currentRoll is str(8):
         printEight()
-    elif currentRoll == float(9):
+    elif currentRoll is str(9):
         printNine()
-    elif currentRoll == float(10):
+    elif currentRoll is str(10):
         printTen()
-    elif currentRoll == float(11):
+    elif currentRoll is str(11):
         printEleven()
-    elif currentRoll == float(12):
+    elif currentRoll is str(12):
         printTwelve()
     changeMoney()
 
@@ -46,8 +46,8 @@ def placeBet(): # place your bet on the next roll
     global currentBet
     global currentMoneyBet
     sayCash()
-    currentBet = float(input("what will the next roll be? -> "))
-    currentMoneyBet = float(input("how much will you bet on that? -> "))
+    currentBet = input("what will the next roll be? -> ")
+    currentMoneyBet = input("how much will you bet on that? -> ")
     rollDice()
 
 def changeMoney(): # take or add money to your wallet
@@ -55,16 +55,10 @@ def changeMoney(): # take or add money to your wallet
     global currentBet
     global currentMoneyBet
     global currentRoll
-    if currentBet == currentRoll:
+    if currentBet is currentRoll:
        walletCash = walletCash + currentMoneyBet
-    elif currentBet > currentRoll:
-        print("bet was greater than roll")
-        walletCash = walletCash - currentMoneyBet
-        lossCheck()
-    elif currentBet < currentRoll:
-        print("bet was less than roll")
-        walletCash = walletCash - currentMoneyBet
-        lossCheck()
+    elif currentBet is not currentRoll:
+        walletCash = walletCash + currentMoneyBet
     else: 
         print("what the fuck")
 

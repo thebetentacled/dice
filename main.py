@@ -47,7 +47,9 @@ def placeBet(): # place your bet on the next roll
     global currentMoneyBet
     sayCash()
     currentBet = input("what will the next roll be? -> ")
+    print("you've bet that the dice will roll an ", currentBet)
     currentMoneyBet = input("how much will you bet on that? -> ")
+    print("you've bet $", currentMoneyBet, " on that.")
     rollDice()
 
 def changeMoney(): # take or add money to your wallet

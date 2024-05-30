@@ -12,7 +12,7 @@ currentRoll = 0
 
 # functions
 def sayCash():
-    print("You have $" + walletCash + ".")
+    print("You have $", walletCash, ".")
 
 def rollDice(): # rolls dice, duh
     global curentRoll

@@ -5,10 +5,10 @@
 import random # for rolling dice
 
 # variables
-walletCash = str(20)
-currentBet = str(0)
-currentMoneyBet = str(0)
-currentRoll = str(0)
+walletCash = 20
+currentBet = 0
+currentMoneyBet = 0
+currentRoll = 0
 
 # functions
 def sayCash():
@@ -16,29 +16,29 @@ def sayCash():
 
 def rollDice(): # rolls dice, duh
     global curentRoll
-    currentRoll = str(random.randint(2, 12))
+    currentRoll = random.randint(2, 12)
     print(currentRoll)
-    if currentRoll is str(2):
+    if currentRoll == 2:
         printTwo()
-    elif currentRoll is str(3):
+    elif currentRoll == 3:
         printThree()
-    elif currentRoll is str(4):
+    elif currentRoll == 4:
         printFour()
-    elif currentRoll is str(5):
+    elif currentRoll == 5:
         printFive()
-    elif currentRoll is str(6):
+    elif currentRoll == 6:
         printSix()
-    elif currentRoll is str(7):
+    elif currentRoll == 7:
         printSeven()
-    elif currentRoll is str(8):
+    elif currentRoll == 8:
         printEight()
-    elif currentRoll is str(9):
+    elif currentRoll == 9:
         printNine()
-    elif currentRoll is str(10):
+    elif currentRoll == 10:
         printTen()
-    elif currentRoll is str(11):
+    elif currentRoll == 11:
         printEleven()
-    elif currentRoll is str(12):
+    elif currentRoll == 12:
         printTwelve()
     changeMoney()
 
@@ -55,20 +55,20 @@ def changeMoney(): # take or add money to your wallet
     global currentBet
     global currentMoneyBet
     global currentRoll
-    if currentBet is currentRoll:
-       walletCash = walletCash + currentMoneyBet
-    elif currentBet is not currentRoll:
-        walletCash = walletCash + currentMoneyBet
+    if int(currentBet) == currentRoll:
+       walletCash = walletCash + int(currentMoneyBet)
+       placeBet()
+    elif int(currentBet) != currentRoll:
+        walletCash = walletCash + int(currentMoneyBet)
+        lossCheck
     else: 
         print("what the fuck")
 
 def lossCheck(): # check if you lose or not
     global walletCash
-    if walletCash <= float(0):
+    if walletCash <= 0:
         print("you lost. better luck next time.")
         exit()
-    else:
-        placeBet()
 
 def printTwo():
     print("|‾‾‾‾‾‾‾‾‾|  |‾‾‾‾‾‾‾‾‾|")

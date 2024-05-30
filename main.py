@@ -17,6 +17,7 @@ def sayCash():
 def rollDice(): # rolls dice, duh
     global curentRoll
     currentRoll = random.randint(2, 12)
+    print(currentRoll)
     if currentRoll == 2:
         printTwo()
     elif currentRoll == 3:

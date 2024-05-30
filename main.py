@@ -2,7 +2,7 @@
 # This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3.
 
 # imports
-from random import randint # for rolling dice
+import random # for rolling dice
 
 # variables
 walletCash = 20
@@ -47,7 +47,7 @@ def placeBet(): # place your bet on the next roll
     global currentMoneyBet
     sayCash()
     currentBet = input("what will the next roll be? -> ")
-    print("you've bet that the dice will roll an " + currentBet)
+    print("you've bet that the dice will roll a(n) " + currentBet)
     currentMoneyBet = input("how much will you bet on that? -> ")
     print("you've bet $" + currentMoneyBet + " on that.")
     rollDice()

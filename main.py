@@ -59,7 +59,7 @@ def changeMoney(): # take or add money to your wallet
        walletCash = walletCash + int(currentMoneyBet)
        placeBet()
     elif int(currentBet) != currentRoll:
-        walletCash = walletCash + int(currentMoneyBet)
+        walletCash = walletCash - int(currentMoneyBet)
         lossCheck()
     else: 
         print("what the fuck")

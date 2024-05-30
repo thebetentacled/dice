@@ -6,8 +6,6 @@ import random # for rolling dice
 
 # variables
 walletCash = int(20)
-minRoll = int(2)
-maxRoll = int(12)
 currentBet = int(0)
 currentMoneyBet = int(0)
 currentRoll = int(0)
@@ -18,7 +16,7 @@ def sayCash():
 
 def rollDice(): # rolls dice, duh
     global curentRoll
-    currentRoll = int(random.randint(minRoll, maxRoll))
+    currentRoll = random.randint(2, 12)
     if currentRoll == 2:
         printTwo()
     elif currentRoll == 3:
@@ -41,8 +39,6 @@ def rollDice(): # rolls dice, duh
         printEleven()
     elif currentRoll == 12:
         printTwelve()
-    else:
-        pass
     changeMoney()
 
 def placeBet(): # place your bet on the next roll
@@ -58,11 +54,18 @@ def changeMoney(): # take or add money to your wallet
     global currentBet
     global currentMoneyBet
     global currentRoll
-    if int(currentBet) == int(currentRoll):
+    if currentBet == currentRoll:
        walletCash = int(walletCash + currentMoneyBet)
-    else: 
+    elif currentBet > currentRoll:
+        print("bet was greater than roll")
         walletCash = int(walletCash - currentMoneyBet)
-    lossCheck()
+        lossCheck()
+    elif currentBet < currentRoll:
+        print("bet was less than roll")
+        walletCash = int(walletCash - currentMoneyBet)
+        lossCheck()
+    else: 
+        print("what the fuck")
 
 def lossCheck(): # check if you lose or not
     global walletCash

@@ -26,4 +26,13 @@ def changeMoney(guess, bet):
         walletCash = walletCash + bet
     else:
         walletCash = walletCash - bet
+
+def checkLoss():
+    global walletCash
+    if walletCash <= 0:
+        print("you lost, better luck next time >:)")
+        exit()
+    else:
+        takeInput()
 # main code
+takeInput()

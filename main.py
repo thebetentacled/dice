@@ -12,6 +12,7 @@ diceRoll = 0
 def rollDice(minRoll, maxRoll):
     global diceRoll
     diceRoll = random.randint(minRoll, maxRoll)
+    print("the dice rolled " + diceRoll + ".")
 
 def takeInput():
     userGuess = int(input("what will the dice roll? -> "))
@@ -24,8 +25,10 @@ def changeMoney(guess, bet):
     global walletCash
     if guess == diceRoll:
         walletCash = walletCash + bet
+        takeInput()
     else:
         walletCash = walletCash - bet
+        checkLoss()
 
 def checkLoss():
     global walletCash

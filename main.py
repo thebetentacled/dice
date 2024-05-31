@@ -12,7 +12,7 @@ diceRoll = 0
 def rollDice(minRoll, maxRoll):
     global diceRoll
     diceRoll = random.randint(minRoll, maxRoll)
-    print("the dice rolled " + diceRoll + ".")
+    print("the dice rolled ", diceRoll, ".")
 
 def takeInput():
     userGuess = int(input("what will the dice roll? -> "))

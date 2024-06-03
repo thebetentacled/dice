@@ -9,26 +9,33 @@ walletCash = 20
 diceRoll = 0
 
 # functions
-def rollDice(minRoll, maxRoll):
+def rollDice():
     global diceRoll
-    diceRoll = random.randint(minRoll, maxRoll)
-    print("the dice rolled", diceRoll)
+    diceRoll = random.randint(2, 12)
 
 def takeInput():
-    userGuess = int(input("what will the dice roll? -> "))
-    userBet = int(input("how much are you willing to bet on that? -> "))
-    rollDice(2, 12)
-    changeMoney(userGuess, userBet)
+    print("you have $" + str(walletCash))
+    userGuess = int(input("what will the dice roll? \n  -> "))
+    userBet = int(input("how much are you willing to bet on that? \n  -> "))
+    rollDice()
+    changeMoney(diceRoll, userGuess, userBet)
 
-def changeMoney(guess, bet):
-    global diceRoll
+def changeMoney(diceRoll, guess, bet):
     global walletCash
-    print("you have", walletCash)
     if guess == diceRoll:
         walletCash = walletCash + bet
+        print("right on the money! you guessed correctly.")
         takeInput()
     else:
         walletCash = walletCash - bet
+        if bet > diceRoll:
+            print("you shot high. better luck next roll.")
+            print("  (roll was " + str(diceRoll) + ", you guessed " + str(guess) + ".)")
+        elif bet < diceRoll:
+            print("you shot low. better luck next roll.")
+            print("  (roll was " + str(diceRoll) + ", you guessed " + str(guess) + ".)")
+        else:
+            pass
         checkLoss()
 
 def checkLoss():

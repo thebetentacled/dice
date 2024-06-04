@@ -12,8 +12,10 @@ diceRoll = 0
 def rollDice():
     global diceRoll
     diceRoll = random.randint(2, 12)
+    printDice(diceRoll)
 
 def takeInput():
+    print("-------------------------------------------------------")
     print("you have $" + str(walletCash))
     userGuess = int(input("what will the dice roll? \n  -> "))
     userBet = int(input("how much are you willing to bet on that? \n  -> "))
@@ -26,7 +28,7 @@ def changeMoney(diceRoll, guess, bet):
         walletCash = walletCash + bet
         print("right on the money! you guessed correctly.")
         takeInput()
-    else:
+    elif guess != diceRoll:
         walletCash = walletCash - bet
         if bet > diceRoll:
             print("you shot high. better luck next roll.")
@@ -45,5 +47,77 @@ def checkLoss():
         exit()
     else:
         takeInput()
+
+# functions for ASCII graphics
+def printDice(number):
+    if number == 2:
+        print("|‾‾‾‾‾‾‾‾‾| |‾‾‾‾‾‾‾‾‾|")
+        print("|         | |         |")
+        print("|    O    | |    O    |")
+        print("|         | |         |")
+        print("|_________| |_________|")
+    elif number == 3:
+        print("|‾‾‾‾‾‾‾‾‾| |‾‾‾‾‾‾‾‾‾|")
+        print("|         | |     O   |")
+        print("|    O    | |         |")
+        print("|         | |   O     |")
+        print("|_________| |_________|")
+    elif number == 4:
+        print("|‾‾‾‾‾‾‾‾‾| |‾‾‾‾‾‾‾‾‾|")
+        print("|         | |     O   |")
+        print("|    O    | |    O    |")
+        print("|         | |   O     |")
+        print("|_________| |_________|")
+    elif number == 5:
+        print("|‾‾‾‾‾‾‾‾‾| |‾‾‾‾‾‾‾‾‾|")
+        print("|     O   | |     O   |")
+        print("|    O    | |         |")
+        print("|   O     | |   O     |")
+        print("|_________| |_________|")
+    elif number == 6:
+        print("|‾‾‾‾‾‾‾‾‾| |‾‾‾‾‾‾‾‾‾|")
+        print("|     O   | |     O   |")
+        print("|    O    | |    O    |")
+        print("|   O     | |   O     |")
+        print("|_________| |_________|")
+    elif number == 7:
+        print("|‾‾‾‾‾‾‾‾‾| |‾‾‾‾‾‾‾‾‾|")
+        print("|     O   | |  O   O  |")
+        print("|    O    | |         |")
+        print("|   O     | |  O   O  |")
+        print("|_________| |_________|")
+    elif number == 8:
+        print("|‾‾‾‾‾‾‾‾‾| |‾‾‾‾‾‾‾‾‾|")
+        print("|  O   O  | |  O   O  |")
+        print("|         | |         |")
+        print("|  O   O  | |  O   O  |")
+        print("|_________| |_________|")
+    elif number == 9:
+        print("|‾‾‾‾‾‾‾‾‾| |‾‾‾‾‾‾‾‾‾|")
+        print("|  O   O  | |  O   O  |")
+        print("|    O    | |         |")
+        print("|  O   O  | |  O   O  |")
+        print("|_________| |_________|")
+    elif number == 10:
+        print("|‾‾‾‾‾‾‾‾‾| |‾‾‾‾‾‾‾‾‾|")
+        print("|  O   O  | |  O   O  |")
+        print("|    O    | |    O    |")
+        print("|  O   O  | |  O   O  |")
+        print("|_________| |_________|")
+    elif number == 11:
+        print("|‾‾‾‾‾‾‾‾‾| |‾‾‾‾‾‾‾‾‾|")
+        print("|  O   O  | |  O   O  |")
+        print("|    O    | |  O   O  |")
+        print("|  O   O  | |  O   O  |")
+        print("|_________| |_________|")
+    elif number == 12:
+        print("|‾‾‾‾‾‾‾‾‾| |‾‾‾‾‾‾‾‾‾|")
+        print("|  O   O  | |  O   O  |")
+        print("|  O   O  | |  O   O  |")
+        print("|  O   O  | |  O   O  |")
+        print("|_________| |_________|")
+
 # main code
+print("'dice' by thebetentacled")
+print("This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3.")
 takeInput()

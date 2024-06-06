@@ -17,7 +17,13 @@ def rollDice():
 def takeInput():
     print("-------------------------------------------------------")
     print("you have $" + str(walletCash))
-    userGuess = int(input("what will the dice roll? \n  -> "))
+    print("input \"quit\" to quit.")
+    userGuess = input("what will the dice roll? \n  -> ")
+    if str(userGuess) == "quit":
+        exit()
+    else:
+        userGuess = int(userGuess)
+        pass
     userBet = int(input("how much are you willing to bet on that? \n  -> "))
     rollDice()
     changeMoney(diceRoll, userGuess, userBet)
@@ -118,6 +124,6 @@ def printDice(number):
         print("|_________| |_________|")
 
 # main code
-print("'dice' by thebetentacled")
+print("\"dice\" by thebetentacled")
 print("This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3.")
 takeInput()

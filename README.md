@@ -8,7 +8,7 @@ Simply copy/paste the code into a python playground online!
 > You can also run it using the python3 command on your computer.
 
 For Linux users:
-To install the game on your system, the linux-install.sh file must be executable (chmod +x linux-install.sh), and the repo must be cloned into your Downloads folder. It will add the file "dice" (a bash script) to /bin, and you can run the game by typing "dice" into your terminal.
+If you want to run the game more easily, clone this repo into your downloads folder, and then make the linux-install.sh script executable (chmod +x linux-install.sh). Run the script, and then you'll be able to run it by typing "dice" into your terminal.
 
 Future Features:
  - OSX and Windows support

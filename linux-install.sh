@@ -1,10 +1,15 @@
 #!/bin/bash
 
 echo "making files executable. . ."
+cd ~/Downloads/dice
 sudo chmod +x dice
 
 echo "making games directory. . ."
-mkdir ~/games/dice
+cd 
+mkdir games
+cd games
+mkdir dice
+cd ~/Downloads/dice
 
 echo "copying files. . ."
 cp main.py ~/games/dice

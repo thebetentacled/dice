@@ -14,3 +14,4 @@ Future Features:
  - OSX and Windows support
  - Proper installer
  - Full graphics
+ - More game modes
